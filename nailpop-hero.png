@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NailPop Sénégal | Press-on nails premium</title>
+    <meta
+      name="description"
+      content="NailPop Sénégal, press-on nails premium avec livraison rapide à Dakar et partout au Sénégal."
+    />
+    <style>
+      :root {
+        --ink: #261a27;
+        --muted: #6f5f70;
+        --fuchsia: #d51277;
+        --violet: #6c2aa6;
+        --gold: #c89b3c;
+        --blush: #fff1f7;
+        --cream: #fffaf4;
+        --line: rgba(38, 26, 39, 0.13);
+        --shadow: 0 18px 50px rgba(82, 23, 72, 0.16);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+        background: var(--cream);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .topbar {
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.86rem;
+        text-align: center;
+        padding: 0.6rem 1rem;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 74px;
+        padding: 0 5vw;
+        background: rgba(255, 250, 244, 0.9);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(16px);
+      }
+
+      .brand {
+        display: grid;
+        gap: 0.05rem;
+      }
+
+      .brand strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.35rem, 3vw, 1.85rem);
+        color: var(--fuchsia);
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.75rem, 2vw, 1.5rem);
+        color: #4c3b4d;
+        font-size: 0.95rem;
+      }
+
+      .cart-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        min-height: 40px;
+        padding: 0 0.8rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100svh - 106px);
+        display: grid;
+        align-items: center;
+        padding: clamp(2.5rem, 5vw, 5rem) 5vw;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.88) 42%, rgba(255, 250, 244, 0.12) 72%),
+          url("nailpop-hero.png") center right / cover no-repeat;
+      }
+
+      .hero-content {
+        width: min(650px, 100%);
+        padding-bottom: 7vh;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 1rem;
+        color: var(--violet);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 34px;
+        height: 2px;
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin-bottom: 1rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 8vw, 6.8rem);
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 620px;
+        color: #4b3d4c;
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.7rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 1.1rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        cursor: pointer;
+        font-weight: 800;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: var(--fuchsia);
+        box-shadow: 0 12px 25px rgba(213, 18, 119, 0.26);
+      }
+
+      .btn-whatsapp {
+        color: #fff;
+        background: #25d366;
+        box-shadow: 0 12px 25px rgba(37, 211, 102, 0.24);
+      }
+
+      .btn-secondary {
+        color: var(--ink);
+        background: #fff;
+        border-color: var(--line);
+      }
+
+      main > section {
+        padding: clamp(3.5rem, 7vw, 6rem) 5vw;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .section-head h2 {
+        max-width: 780px;
+        margin-bottom: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1;
+      }
+
+      .section-head p {
+        max-width: 420px;
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .promise-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--line);
+      }
+
+      .promise {
+        min-height: 170px;
+        padding: 1.35rem;
+        background: #fff;
+      }
+
+      .promise b {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: var(--fuchsia);
+        font-size: 1.05rem;
+      }
+
+      .promise p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .shop-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+        gap: 1.2rem;
+        align-items: start;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .product,
+      .panel,
+      .story-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .product {
+        overflow: hidden;
+      }
+
+      .product-art {
+        min-height: 220px;
+        padding: 1.1rem;
+        display: grid;
+        place-items: center;
+        background: var(--product-bg);
+      }
+
+      .product-art img {
+        width: min(100%, 210px);
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: 0 14px 30px rgba(67, 25, 64, 0.16);
+        filter: saturate(1.06) contrast(1.05);
+      }
+
+      .nail-set {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+        min-height: 122px;
+      }
+
+      .nail {
+        width: clamp(30px, 4vw, 48px);
+        border-radius: 999px 999px 34px 34px;
+        background: var(--nail);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        box-shadow: inset 0 12px 18px rgba(255, 255, 255, 0.34), 0 14px 28px rgba(67, 25, 64, 0.16);
+      }
+
+      .nail:nth-child(1),
+      .nail:nth-child(5) {
+        height: 86px;
+      }
+
+      .nail:nth-child(2),
+      .nail:nth-child(4) {
+        height: 110px;
+      }
+
+      .nail:nth-child(3) {
+        height: 128px;
+      }
+
+      .product-body {
+        padding: 1rem;
+      }
+
+      .product h3 {
+        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .product p {
+        min-height: 48px;
+        margin-bottom: 0.7rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .price {
+        font-weight: 900;
+        color: var(--violet);
+      }
+
+      .tag {
+        display: inline-flex;
+        min-height: 28px;
+        align-items: center;
+        padding: 0 0.55rem;
+        border-radius: 999px;
+        background: var(--blush);
+        color: var(--fuchsia);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .product .btn {
+        width: 100%;
+      }
+
+      .buy-row {
+        display: grid;
+        grid-template-columns: 86px 1fr;
+        gap: 0.55rem;
+      }
+
+      .qty-select,
+      .qty-input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0 0.65rem;
+        background: #fffafc;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .panel {
+        position: sticky;
+        top: 92px;
+        padding: 1.1rem;
+      }
+
+      .panel h3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .cart-list {
+        display: grid;
+        gap: 0.65rem;
+        min-height: 88px;
+      }
+
+      .cart-item {
+        display: grid;
+        grid-template-columns: 1fr 74px auto;
+        align-items: center;
+        gap: 0.25rem 0.8rem;
+        padding-bottom: 0.65rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cart-item small {
+        color: var(--muted);
+      }
+
+      .cart-item a {
+        color: var(--fuchsia);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .remove {
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fff;
+        cursor: pointer;
+      }
+
+      .cart-empty {
+        color: var(--muted);
+      }
+
+      .field {
+        display: grid;
+        gap: 0.35rem;
+        margin-top: 0.8rem;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0.75rem;
+        background: #fffafc;
+        color: var(--ink);
+      }
+
+      .field textarea {
+        min-height: 76px;
+        resize: vertical;
+      }
+
+      .totals {
+        display: grid;
+        gap: 0.45rem;
+        margin: 1rem 0;
+        padding-top: 0.9rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .totals div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .totals strong {
+        font-size: 1.2rem;
+      }
+
+      .story {
+        background: #fff;
+      }
+
+      .story-wrap {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 1.2rem;
+        align-items: stretch;
+      }
+
+      .story-card {
+        padding: clamp(1.3rem, 3vw, 2rem);
+      }
+
+      .story-card h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        line-height: 1;
+      }
+
+      .story-card p {
+        color: var(--muted);
+      }
+
+      .packaging {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .packaging li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.8rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--cream);
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        flex: 0 0 12px;
+        border-radius: 50%;
+        background: var(--fuchsia);
+        box-shadow: 0 0 0 5px rgba(213, 18, 119, 0.1);
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr minmax(260px, 420px);
+        align-items: center;
+        gap: 1.5rem;
+        padding: clamp(2rem, 5vw, 4rem) 5vw;
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .footer p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .footer-visual {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .footer-visual img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+      }
+
+      @media (max-width: 1020px) {
+        .shop-layout,
+        .story-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .products,
+        .promise-grid,
+        .footer {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .panel {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .topbar {
+          font-size: 0.78rem;
+        }
+
+        .nav {
+          align-items: start;
+          flex-direction: column;
+          min-height: auto;
+          padding-top: 0.85rem;
+          padding-bottom: 0.85rem;
+        }
+
+        .nav-links {
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 0.2rem;
+        }
+
+        .hero {
+          min-height: 760px;
+          align-items: start;
+          background:
+            linear-gradient(180deg, rgba(255, 250, 244, 0.98) 0%, rgba(255, 250, 244, 0.92) 46%, rgba(255, 250, 244, 0.16) 78%),
+            url("nailpop-hero.png") center bottom / cover no-repeat;
+        }
+
+        h1 {
+          max-width: 10ch;
+        }
+
+        .section-head {
+          display: grid;
+        }
+
+        .products,
+        .promise-grid,
+        .footer {
+          grid-template-columns: 1fr;
+        }
+
+        .buy-row {
+          grid-template-columns: 78px 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">Livraison rapide à Dakar et expédition dans les régions du Sénégal</div>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="NailPop Sénégal accueil">
+        <strong>NailPop Sénégal</strong>
+        <span>Press-on nails premium</span>
+      </a>
+      <div class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="#histoire">Histoire</a>
+        <a href="#commander">Commander</a>
+        <a class="cart-pill" href="#commander">Panier <b id="cart-count">0</b></a>
+      </div>
+    </nav>
+
+    <header class="hero" id="accueil">
+      <div class="hero-content">
+        <p class="eyebrow">La référence press-on au Sénégal</p>
+        <h1>Des ongles parfaits en moins de 10 minutes.</h1>
+        <p class="lead">
+          Des ongles qui font sensation: press-on nails tendance, faciles et élégants, livrés rapidement à Dakar et partout au Sénégal.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#collections">Acheter maintenant</a>
+          <a class="btn btn-secondary" href="#histoire">Découvrir la marque</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="promesse-title">
+        <div class="section-head">
+          <h2 id="promesse-title">La beauté instantanée, sans rendez-vous.</h2>
+          <p>
+            NailPop Sénégal aide les femmes à gagner du temps, garder une allure élégante et se sentir prêtes pour chaque moment important.
+          </p>
+        </div>
+        <div class="promise-grid">
+          <article class="promise">
+            <b>Pose rapide</b>
+            <p>Une manucure soignée en moins de 10 minutes, à la maison ou avant une sortie.</p>
+          </article>
+          <article class="promise">
+            <b>Qualité premium</b>
+            <p>Des formes, couleurs et finitions pensées pour un rendu élégant et naturel.</p>
+          </article>
+          <article class="promise">
+            <b>Réutilisables</b>
+            <p>Chaque kit peut accompagner plusieurs looks si la pose et le retrait sont bien faits.</p>
+          </article>
+          <article class="promise">
+            <b>Livraison Sénégal</b>
+            <p>Dakar en 24h-48h, régions en 2 à 5 jours: une expérience simple, rapide et rassurante.</p>
+          </article>
+          <article class="promise">
+            <b>Paiement flexible</b>
+            <p>Wave, Orange Money et paiement à la livraison selon la zone et la commande.</p>
+          </article>
+          <article class="promise">
+            <b>Support WhatsApp</b>
+            <p>Conseil taille, choix du modèle, suivi commande et tutoriel de pose.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="collections" aria-labelledby="collections-title">
+        <div class="section-head">
+          <h2 id="collections-title">Collections NailPop</h2>
+          <p>Trois gammes claires pour le quotidien, les cérémonies et les designs exclusifs.</p>
+        </div>
+
+        <div class="shop-layout" id="commander">
+          <div class="products" aria-label="Liste des collections">
+            <article class="product" id="produit-pink-french" style="--product-bg: #fff0f5;">
+              <div class="product-art">
+                <img src="catalogue-new/04ed280c-8425-47c1-89ef-25ad924e16c4.avif" alt="Press-on nails rose french élégants" />
+              </div>
+              <div class="product-body">
+                <h3>Pink French</h3>
+                <p>Une french rose douce et féminine pour un rendu propre et élégant.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Basic</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Pink French">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Pink French" data-price="4500" data-link="#produit-pink-french">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-bordeaux-chic" style="--product-bg: #f6efff;">
+              <div class="product-art">
+                <img src="catalogue-new/1df1a230-d660-48ee-8f4a-f03f30239a82.avif" alt="Press-on nails bordeaux et nude" />
+              </div>
+              <div class="product-body">
+                <h3>Bordeaux Chic</h3>
+                <p>Bordeaux profond et nude brillant pour un style sophistiqué.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Glam</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Bordeaux Chic">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Bordeaux Chic" data-price="4500" data-link="#produit-bordeaux-chic">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-mocha-nude" style="--product-bg: #fff6df;">
+              <div class="product-art">
+                <img src="catalogue-new/24ed1fe7-8066-427e-aeaa-1d5f886a2636.avif" alt="Press-on nails nude marron brillants" />
+              </div>
+              <div class="product-body">
+                <h3>Mocha Nude</h3>
+                <p>Un nude marron chic, discret et facile à porter.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Basic</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Mocha Nude">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Mocha Nude" data-price="4500" data-link="#produit-mocha-nude">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-champagne-glow" style="--product-bg: #fff0f5;">
+              <div class="product-art">
+                <img src="catalogue-new/26187436-14af-4146-8c46-29368f4cfd3b.avif" alt="Press-on nails champagne pailletés" />
+              </div>
+              <div class="product-body">
+                <h3>Champagne Glow</h3>
+                <p>Finition champagne et paillettes fines pour briller sans trop en faire.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Glam</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Champagne Glow">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Champagne Glow" data-price="4500" data-link="#produit-champagne-glow">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-galaxy-pop" style="--product-bg: #f6efff;">
+              <div class="product-art">
+                <img src="catalogue-new/311b564e-c7d2-46ba-9683-69f8691b141b.avif" alt="Press-on nails violet galaxie pailleté" />
+              </div>
+              <div class="product-body">
+                <h3>Galaxy Pop</h3>
+                <p>Violet profond et paillettes pour les looks qui brillent vraiment.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Luxe</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Galaxy Pop">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Galaxy Pop" data-price="4500" data-link="#produit-galaxy-pop">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-pearl-grey" style="--product-bg: #fff6df;">
+              <div class="product-art">
+                <img src="catalogue-new/3b35a88a-23b0-416a-8043-47214fc6afff.avif" alt="Press-on nails gris perlé" />
+              </div>
+              <div class="product-body">
+                <h3>Pearl Grey</h3>
+                <p>Un gris perlé lumineux pour une manucure douce et premium.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Glam</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Pearl Grey">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Pearl Grey" data-price="4500" data-link="#produit-pearl-grey">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-soft-pink" style="--product-bg: #fff0f5;">
+              <div class="product-art">
+                <img src="catalogue-new/442792d7-88ea-4751-9c89-81af31a12bd8.avif" alt="Press-on nails rose clair" />
+              </div>
+              <div class="product-body">
+                <h3>Soft Pink</h3>
+                <p>Rose clair, simple et frais pour toutes les occasions.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Basic</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Soft Pink">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Soft Pink" data-price="4500" data-link="#produit-soft-pink">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-dotted-glam" style="--product-bg: #f6efff;">
+              <div class="product-art">
+                <img src="catalogue-new/4ccfd9ec-1a80-4e3b-8de8-27e2f43e8949.avif" alt="Press-on nails nude avec motifs points" />
+              </div>
+              <div class="product-body">
+                <h3>Dotted Glam</h3>
+                <p>Un design nude fantaisie avec points et touches bordeaux.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Luxe</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Dotted Glam">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Dotted Glam" data-price="4500" data-link="#produit-dotted-glam">Ajouter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" id="produit-black-aqua" style="--product-bg: #fff6df;">
+              <div class="product-art">
+                <img src="catalogue-new/51ec3470-7fc9-4735-862d-626fe5a2867b.avif" alt="Press-on nails noirs avec pointe turquoise" />
+              </div>
+              <div class="product-body">
+                <h3>Black Aqua</h3>
+                <p>Noir intense et pointe turquoise pour un look moderne.</p>
+                <div class="price-row">
+                  <span class="price">4 500 FCFA</span>
+                  <span class="tag">Pop Luxe</span>
+                </div>
+                <div class="buy-row">
+                  <select class="qty-select" aria-label="Quantité Black Aqua">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  </select>
+                  <button class="btn btn-primary add" data-name="Black Aqua" data-price="4500" data-link="#produit-black-aqua">Ajouter</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="panel" aria-labelledby="cart-title">
+            <h3 id="cart-title">Commande WhatsApp</h3>
+            <div class="cart-list" id="cart-list">
+              <p class="cart-empty">Ajoute une collection pour préparer ta commande.</p>
+            </div>
+
+            <div class="field">
+              <label for="customer-name">Nom</label>
+              <input id="customer-name" placeholder="Votre nom" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="delivery-zone">Zone de livraison</label>
+              <select id="delivery-zone">
+                <option value="1500">Dakar 24h-48h - 1 500 FCFA</option>
+                <option value="2500">Banlieue - 2 500 FCFA</option>
+                <option value="4000">Régions 2 à 5 jours - à partir de 4 000 FCFA</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="payment">Paiement</label>
+              <select id="payment">
+                <option>Wave</option>
+                <option>Orange Money</option>
+                <option>À la livraison</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="notes">Notes</label>
+              <textarea id="notes" placeholder="Taille, couleur préférée, adresse ou précision..."></textarea>
+            </div>
+            <div class="totals" aria-live="polite">
+              <div><span>Sous-total</span><b id="subtotal">0 FCFA</b></div>
+              <div><span>Livraison</span><b id="delivery">1 500 FCFA</b></div>
+              <div><strong>Total</strong><strong id="total">1 500 FCFA</strong></div>
+            </div>
+            <a class="btn btn-whatsapp" id="whatsapp" href="#" target="_blank" rel="noreferrer">Envoyer sur WhatsApp</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="story" id="histoire" aria-labelledby="story-title">
+        <div class="story-wrap">
+          <article class="story-card">
+            <p class="eyebrow">Notre mission</p>
+            <h2 id="story-title">Une marque sénégalaise pensée pour les femmes pressées et élégantes.</h2>
+            <p>
+              NailPop Sénégal est née d'un constat simple: beaucoup de femmes souhaitent avoir de beaux ongles sans passer des heures en salon ou dépenser des sommes importantes.
+            </p>
+            <p>
+              Nous avons créé une solution élégante, pratique et moderne: des press-on nails premium livrés directement chez vous, partout au Sénégal.
+            </p>
+          </article>
+          <article class="story-card">
+            <h3>Dans chaque boîte</h3>
+            <ul class="packaging">
+              <li><span class="dot"></span>Press-on nails sélectionnés selon la collection</li>
+              <li><span class="dot"></span>Colle ou stickers adhésifs selon le kit</li>
+              <li><span class="dot"></span>Lime, notice de pose et conseils de retrait</li>
+              <li><span class="dot"></span>Huile et soins selon disponibilité</li>
+              <li><span class="dot"></span>Carte de remerciement NailPop Sénégal</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>NailPop Sénégal</strong>
+        <p>La première marque sénégalaise spécialisée dans les press-on nails premium.</p>
+        <p>Votre beauté, notre priorité. Livraison Dakar & régions, Wave, Orange Money et paiement à la livraison.</p>
+      </div>
+      <div class="footer-visual" aria-label="Aperçu des modèles NailPop">
+        <img src="catalogue-new/04ed280c-8425-47c1-89ef-25ad924e16c4.avif" alt="Modèle NailPop rose french" />
+        <img src="catalogue-new/26187436-14af-4146-8c46-29368f4cfd3b.avif" alt="Modèle NailPop champagne pailleté" />
+        <img src="catalogue-new/311b564e-c7d2-46ba-9683-69f8691b141b.avif" alt="Modèle NailPop violet galaxie" />
+        <img src="catalogue-new/51ec3470-7fc9-4735-862d-626fe5a2867b.avif" alt="Modèle NailPop noir turquoise" />
+      </div>
+    </footer>
+
+    <script>
+      const cart = [];
+      const format = (amount) => new Intl.NumberFormat("fr-FR").format(amount) + " FCFA";
+      const list = document.querySelector("#cart-list");
+      const count = document.querySelector("#cart-count");
+      const subtotalEl = document.querySelector("#subtotal");
+      const deliveryEl = document.querySelector("#delivery");
+      const totalEl = document.querySelector("#total");
+      const zone = document.querySelector("#delivery-zone");
+      const whatsapp = document.querySelector("#whatsapp");
+
+      function productUrl(hash) {
+        return `${window.location.origin}${window.location.pathname}${hash}`;
+      }
+
+      function renderCart() {
+        list.innerHTML = "";
+        if (!cart.length) {
+          list.innerHTML = '<p class="cart-empty">Ajoute une collection pour préparer ta commande.</p>';
+        } else {
+          cart.forEach((item, index) => {
+            const row = document.createElement("div");
+            row.className = "cart-item";
+            row.innerHTML = `
+              <div>
+                <b>${item.name}</b>
+                <small>${format(item.price)} l'unité · ${format(item.price * item.qty)}</small>
+                <a href="${item.link}">Voir le modèle</a>
+              </div>
+              <input class="qty-input" type="number" min="1" max="20" value="${item.qty}" aria-label="Quantité ${item.name}" data-index="${index}" />
+              <button class="remove" aria-label="Retirer ${item.name}" data-index="${index}">×</button>
+            `;
+            list.append(row);
+          });
+        }
+
+        const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+        const delivery = Number(zone.value);
+        const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        count.textContent = totalQty;
+        subtotalEl.textContent = format(subtotal);
+        deliveryEl.textContent = format(delivery);
+        totalEl.textContent = format(subtotal + delivery);
+
+        const name = document.querySelector("#customer-name").value || "Cliente NailPop";
+        const payment = document.querySelector("#payment").value;
+        const notes = document.querySelector("#notes").value;
+        const items = cart.map((item) =>
+          `- ${item.name} x${item.qty}: ${format(item.price * item.qty)}%0A  Prix unitaire: ${format(item.price)}%0A  Lien: ${encodeURIComponent(productUrl(item.link))}`
+        ).join("%0A") || "- À confirmer";
+        const message = `Bonjour NailPop Sénégal,%0A%0AJe souhaite commander:%0A${items}%0A%0ANom: ${encodeURIComponent(name)}%0ALivraison: ${encodeURIComponent(zone.options[zone.selectedIndex].text)}%0APaiement: ${encodeURIComponent(payment)}%0ASous-total: ${encodeURIComponent(format(subtotal))}%0ATotal estimé: ${encodeURIComponent(format(subtotal + delivery))}%0ANotes: ${encodeURIComponent(notes || "Aucune")}`;
+        whatsapp.href = `https://wa.me/22115077190505?text=${message}`;
+      }
+
+      document.querySelectorAll(".add").forEach((button) => {
+        button.addEventListener("click", () => {
+          const quantity = Number(button.closest(".product-body").querySelector(".qty-select").value);
+          const existing = cart.find((item) => item.name === button.dataset.name);
+          if (existing) {
+            existing.qty += quantity;
+          } else {
+            cart.push({
+              name: button.dataset.name,
+              price: Number(button.dataset.price),
+              link: button.dataset.link,
+              qty: quantity,
+            });
+          }
+          renderCart();
+        });
+      });
+
+      list.addEventListener("click", (event) => {
+        const button = event.target.closest(".remove");
+        if (!button) return;
+        cart.splice(Number(button.dataset.index), 1);
+        renderCart();
+      });
+
+      list.addEventListener("input", (event) => {
+        const input = event.target.closest(".qty-input");
+        if (!input) return;
+        const value = Math.max(1, Math.min(20, Number(input.value) || 1));
+        cart[Number(input.dataset.index)].qty = value;
+        renderCart();
+      });
+
+      document.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.addEventListener("input", renderCart);
+      });
+
+      renderCart();
+    </script>
+  </body>
+</html>
