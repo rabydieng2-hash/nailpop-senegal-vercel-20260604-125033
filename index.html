@@ -1032,7 +1032,7 @@
           `- ${item.name} x${item.qty}: ${format(item.price * item.qty)}%0A  Prix unitaire: ${format(item.price)}%0A  Lien: ${encodeURIComponent(productUrl(item.link))}`
         ).join("%0A") || "- À confirmer";
         const message = `Bonjour NailPop Sénégal,%0A%0AJe souhaite commander:%0A${items}%0A%0ANom: ${encodeURIComponent(name)}%0ALivraison: ${encodeURIComponent(zone.options[zone.selectedIndex].text)}%0APaiement: ${encodeURIComponent(payment)}%0ASous-total: ${encodeURIComponent(format(subtotal))}%0ATotal estimé: ${encodeURIComponent(format(subtotal + delivery))}%0ANotes: ${encodeURIComponent(notes || "Aucune")}`;
-        whatsapp.href = `https://wa.me/22115077190505?text=${message}`;
+        whatsapp.href = `https://wa.me/15077190505?text=${message}`;
       }
 
       document.querySelectorAll(".add").forEach((button) => {
